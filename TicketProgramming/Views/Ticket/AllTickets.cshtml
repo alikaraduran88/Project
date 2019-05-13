@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TicketProgramming.Models.Ticket>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllTickets</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KullaniciID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAktif)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nott)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullaniciID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAktif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nott)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.TicketID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.TicketID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.TicketID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

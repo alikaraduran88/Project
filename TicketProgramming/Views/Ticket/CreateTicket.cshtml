@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+@model TicketProgramming.Models.VM.TicketVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateTicket</title>
+</head>
+<body>
+    <form action="/Ticket/CreateTicket" method="post">
+        <div>
+            @Html.LabelFor(q => q.Mail)
+            @Html.TextBoxFor(q => q.Mail)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Ticket1)
+            @Html.TextBoxFor(q => q.Ticket1)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Aciklama)
+            @Html.TextBoxFor(q => q.Aciklama)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.IsAktif)
+            @Html.TextBoxFor(q => q.IsAktif)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Nott)
+            @Html.TextBoxFor(q => q.Nott)
+        </div>
+        <div>
+            <input type="submit" name="name" value="Kayıt" />
+        </div>
+    </form>
+</body>
+</html>
