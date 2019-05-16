@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TicketProgramming.Data;
 using TicketProgramming.Manager;
 using TicketProgramming.Models.VM;
 
@@ -11,29 +12,63 @@ namespace TicketProgramming.Controllers
     public class TicketController : Controller
     {
        
-        List<Models.Ticket> _Ticket = new List<Models.Ticket>();
+        List<Ticket> _Ticket = new List<Ticket>();
         
          TicketService _TicketService = new TicketManager();
 
          [HttpGet]
-        public ActionResult CreateTicket()
+        public ActionResult Create()
         {
-            
             return View();
         }
-        [HttpPost]
-        public ActionResult CreateTicket(int KullaniciID,string Mail,string Ticket1,string Aciklama,string IsAktif, string Nott)
-        {
-            
 
-            return View();
+        [HttpPost]
+        public ActionResult Create(Ticket ticket)
+        {
+            _TicketService.CreateTicket(ticket);
+            return RedirectToAction("CreateTicket");
         }
+
+
+        // **********************************************
 
         [HttpGet]
+        //Bilgi İslem Sef Tüm Ticketleri Görmektedir.
         public ActionResult AllTickets()
-        {   
-            _Ticket = _TicketService.GetAllTickets();
-            return View(_Ticket);
+        {
+            
+            return View(_TicketService.GetAllTickets());
         }
+
+
+        // **********************************************
+        //Personeller Kendi Ticketlerini Görmektedir.
+        [HttpGet]
+        public ActionResult PersonelTickets()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PersonelTickets(Ticket _Ticket)
+        {
+            return View();
+        }
+
+        // **********************************************
+
+        //Bilgi işlem Ticketlerini Görmektedir.
+        [HttpGet]
+        public ActionResult ITTickets()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ITTickets(Ticket _Ticket)
+        {
+            return View();
+        }
+
     }
 }

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TicketProgramming
+namespace TicketProgramming.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TicketDatabaseEntities1 : DbContext
+    public partial class TicketDatabaseEntities : DbContext
     {
-        public TicketDatabaseEntities1()
-            : base("name=TicketDatabaseEntities1")
+        public TicketDatabaseEntities()
+            : base("name=TicketDatabaseEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace TicketProgramming
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Kullanici> Kullanicis { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

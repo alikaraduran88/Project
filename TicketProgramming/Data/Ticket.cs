@@ -7,18 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TicketProgramming
+namespace TicketProgramming.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Kullanici
+    public class Ticket
     {
-        public int KullaniciID { get; set; }
+        public int TicketID { get; set; }
+        public Nullable<int> KullaniciID { get; set; }
         public string Mail { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string Tur { get; set; }
-        public string Sifre { get; set; }
+        public string Ticket1 { get; set; }
+        public string Aciklama { get; set; }
+        public string IsAktif { get; set; }
+        public string Nott { get; set; }
     }
 }

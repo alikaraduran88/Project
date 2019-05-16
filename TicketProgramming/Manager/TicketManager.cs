@@ -2,18 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TicketProgramming.Data;
 using TicketProgramming.Models;
+using TicketProgramming.Models.VM;
 
 namespace TicketProgramming.Manager
 {
     public class TicketManager : TicketService
     {
-        public List<Models.Ticket> _Ticket;
-       
-        public List<Models.Ticket> GetAllTickets()
+        
+        TicketDatabaseEntities db = new TicketDatabaseEntities();
+
+        public List<Ticket> GetAllTickets()
+        { 
+            return db.Tickets.ToList();
+        }
+
+
+        public bool CreateTicket(Ticket ticket)
         {
-           
-            return _Ticket;
+            try
+            {
+                db.Tickets.Add(ticket);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

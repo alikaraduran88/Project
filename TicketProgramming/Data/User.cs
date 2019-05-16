@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TicketProgramming.Models
+namespace TicketProgramming.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Kullanici
+    public partial class User
     {
         public int KullaniciID { get; set; }
-        public string Mail { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string Tur { get; set; }
-        public string Sifre { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Tittle { get; set; }
     }
 }
