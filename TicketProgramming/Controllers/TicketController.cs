@@ -26,7 +26,7 @@ namespace TicketProgramming.Controllers
         public ActionResult Create(Ticket ticket)
         {
             _TicketService.CreateTicket(ticket);
-            return RedirectToAction("CreateTicket");
+            return RedirectToAction("AllTickets");
         }
 
 
