@@ -29,7 +29,18 @@ namespace TicketProgramming.Controllers
             return RedirectToAction("AllTickets");
         }
 
+        [HttpGet]
+        public ActionResult CreateTicket()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult CreateTicket(Ticket ticket)
+        {
+            _TicketService.CreateTicket(ticket);
+            return RedirectToAction("AllTickets");
+        }
         // **********************************************
 
         [HttpGet]
