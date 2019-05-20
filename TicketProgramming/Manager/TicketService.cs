@@ -11,6 +11,6 @@ namespace TicketProgramming.Manager
     {
         List<Ticket> GetAllTickets();
         bool CreateTicket(Ticket ticket);
-
+        List<Ticket> Edit(int id);
     }
 }

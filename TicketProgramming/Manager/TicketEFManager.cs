@@ -30,5 +30,11 @@ namespace TicketProgramming.Manager
                 return false;
             }           
         }
+
+        public List<Ticket> Edit(int id)
+        {
+               var query = db.Tickets.Where(q => q.TicketID == id).ToList();
+               return query;
+        }
     }
 }

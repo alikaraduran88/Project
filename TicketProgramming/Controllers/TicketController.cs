@@ -81,5 +81,13 @@ namespace TicketProgramming.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Edit(int TicketID)
+        {
+            var query = _TicketService.Edit(TicketID);
+            return View(query);
+        }
+
+        
     }
 }

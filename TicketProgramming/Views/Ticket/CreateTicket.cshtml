@@ -7,7 +7,7 @@
 
 <h2>CreateTicket</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -64,7 +64,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <!-- burası eklendi-->    <input type="submit" value="Create" onclick="Create(model)" />
             </div>
         </div>
     </div>
@@ -73,3 +73,21 @@
 <div>
     @Html.ActionLink("Back to List", "AllTickets")
 </div>
+
+
+<!-- burası eklendi-->
+
+<script>
+    function Create(model) {
+        $.ajax({
+            url: "/Ticket/CreateTicket/" + model,
+            type: "POST",
+            success: function () {
+                $("#");
+            },
+            error: function () {
+                alert("Hata meydana geldi")
+            }
+        })
+    }
+</script>

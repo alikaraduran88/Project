@@ -12,15 +12,12 @@ namespace TicketProgramming.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticket
+    public partial class sysdiagram
     {
-        public int TicketID { get; set; }
-        public Nullable<int> KullaniciID { get; set; }
-        public string Mail { get; set; }
-        public string Ticket1 { get; set; }
-        public string Aciklama { get; set; }
-        public string IsAktif { get; set; }
-        public string Nott { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

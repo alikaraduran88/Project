@@ -1924,6 +1924,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Ticket.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -1959,6 +1962,7 @@
     <Content Include="Views\_Layout\HeaderMenu.cshtml" />
     <Content Include="Views\_Layout\SiteLeftMenu.cshtml" />
     <Content Include="Views\Ticket\AllTickets.cshtml" />
+    <Content Include="Views\Ticket\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
