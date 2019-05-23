@@ -36,6 +36,8 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="Tittle" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="TicketDatabaseModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -72,6 +74,8 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tittle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -106,6 +110,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="TicketDatabaseModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Tittle" ColumnName="Tittle" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

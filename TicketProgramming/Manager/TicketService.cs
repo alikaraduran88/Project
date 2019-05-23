@@ -9,8 +9,10 @@ namespace TicketProgramming.Manager
 {
     public interface TicketService
     {
-        List<Ticket> GetAllTickets();
+        List<Ticket> GetAllTickets(); // Tüm Ticketler
         bool CreateTicket(Ticket ticket);
         List<Ticket> Edit(int id);
+        List<Ticket> GetPersonelAllTickets(string mail);
+       // bool CheckLogin(string Username, string password);
     }
 }
